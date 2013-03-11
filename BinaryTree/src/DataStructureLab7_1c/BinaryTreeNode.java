@@ -1,4 +1,4 @@
-package Testing;
+package DataStructureLab7_1c;
 // BinaryTreeNode class; stores a node in a tree.
 //
 // CONSTRUCTION: with (a) no parameters, or (b) an Object,
@@ -16,18 +16,23 @@ package Testing;
  * Binary node class with recursive routines to
  * compute size and height.
  */
-final class BinaryTreeNode<AnyType>
+final class BinaryTreeNode 
 {
-    private AnyType             element;
-    private BinaryTreeNode<AnyType> left;
-    private BinaryTreeNode<AnyType> right;
+    int             element;
+      BinaryTreeNode  left;
+      BinaryTreeNode  right;
     
     public BinaryTreeNode( )
     {
-        this( null, null, null );
+        this( 0, null, null );
     }
     
-    public BinaryTreeNode( AnyType theElement, BinaryTreeNode<AnyType> lt, BinaryTreeNode<AnyType> rt )
+	public BinaryTreeNode(int element) {		
+		this(element,null,null);
+	}
+
+    
+    public BinaryTreeNode( int theElement, BinaryTreeNode  lt, BinaryTreeNode  rt )
     {
         element = theElement;
         left    = lt;
@@ -37,7 +42,7 @@ final class BinaryTreeNode<AnyType>
     /**
      * Return the size of the binary tree rooted at t.
      */
-    public static <AnyType> int size( BinaryTreeNode<AnyType> t )
+    public static <Integer> int size( BinaryTreeNode  t )
     {
         if( t == null )
             return 0;
@@ -48,7 +53,7 @@ final class BinaryTreeNode<AnyType>
     /**
      * Return the height of the binary tree rooted at t.
      */
-    public static <AnyType> int height( BinaryTreeNode<AnyType> t )
+    public static <Integer> int height( BinaryTreeNode  t )
     {
         if( t == null )
             return -1;
@@ -66,7 +71,7 @@ final class BinaryTreeNode<AnyType>
             right.printPreOrder( );          // Right
     }
     
-    private void preorder(BinaryTreeNode<AnyType> p)
+    private void preorder(BinaryTreeNode  p)
     {
     if (p != null)
     {
@@ -87,7 +92,7 @@ final class BinaryTreeNode<AnyType>
         System.out.println( element );       // Node
     }
     
-    private void postorder(BinaryTreeNode<AnyType> p)
+    private void postorder(BinaryTreeNode  p)
     {
     if (p != null)
     {
@@ -107,7 +112,7 @@ final class BinaryTreeNode<AnyType>
             right.printInOrder( );           // Right
     }
     
-    private void inorder(BinaryTreeNode<AnyType> p)
+    private void inorder(BinaryTreeNode  p)
     {
     if (p != null)
     {
@@ -122,9 +127,9 @@ final class BinaryTreeNode<AnyType>
      * Return a reference to a node that is the root of a
      * duplicate of the binary tree rooted at the current node.
      */
-    public BinaryTreeNode<AnyType> duplicate( )
+    public BinaryTreeNode  duplicate( )
     {
-        BinaryTreeNode<AnyType> root = new BinaryTreeNode<AnyType>( element, null, null );
+        BinaryTreeNode  root = new BinaryTreeNode ( element, null, null );
 
         if( left != null )            // If there's a left subtree
             root.left = left.duplicate( );    // Duplicate; attach
@@ -133,53 +138,38 @@ final class BinaryTreeNode<AnyType>
         return root;                      // Return resulting tree
     }
     
-    private BinaryTreeNode<AnyType> copyTree
-    (BinaryTreeNode<AnyType> otherTreeRoot)
-    {
-    BinaryTreeNode<AnyType> temp;
-    if (otherTreeRoot == null)
-    temp = null;
-    else
-    {
-    temp = (BinaryTreeNode<AnyType>) otherTreeRoot.clone();
-    temp.left = copyTree(otherTreeRoot.left);
-    temp.right = copyTree(otherTreeRoot.right);
-    }
-    return temp;
-    }//end copyTree
-    
-    
+   
  
     
     
    
     
-    public AnyType getElement( )
+    public Integer getElement( )
     {
         return element;
     }
     
-    public BinaryTreeNode<AnyType> getLeft( )
+    public BinaryTreeNode  getLeft( )
     {
         return left;
     }
     
-    public BinaryTreeNode<AnyType> getRight( )
+    public BinaryTreeNode  getRight( )
     {
         return right;
     }
     
-    public void setElement( AnyType x )
+    public void setElement( int x )
     {
         element = x;
     }
     
-    public void setLeft( BinaryTreeNode<AnyType> t )
+    public void setLeft( BinaryTreeNode  t )
     {
         left = t;
     }
     
-    public void setRight( BinaryTreeNode<AnyType> t )
+    public void setRight( BinaryTreeNode  t )
     {
         right = t;
     }

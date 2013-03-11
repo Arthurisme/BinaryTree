@@ -1,25 +1,16 @@
 package EasySample;
-
-import java.applet.*;
-import java.awt.*;
-import java.awt.event.*;
+ 
 /**
 * This class demonstrates use of a binary tree to store names
 */
-public class BinaryTreeExample extends Applet implements ActionListener
+public class BinaryTreeExample  
 {
+	public BinaryTreeExample() {
+	}
   // interface objects
-   Label dataLabel = new Label("Data:");
-   TextField dataField = new TextField("Enter data here");
+   
 
-  Button addButton = new Button("Add item");
-   Button newButton = new Button("New tree");
-   Button preButton = new Button("Pre-order");
-   Button inoButton = new Button("In-order");
-   Button posButton = new Button("Post-order");
-
-   TextArea display = new TextArea(10, 20);
-  Label messages = new Label("System messages appear here");
+   
 
    // pointer to root node
    Node root;
@@ -29,26 +20,7 @@ public class BinaryTreeExample extends Applet implements ActionListener
    */
    public void init()
    {
-     add( dataLabel );
-     add( dataField );
-     // Button panels
-     Panel actionButtons = new Panel();
-     actionButtons.add( addButton );
-     actionButtons.add( newButton);
-     add(actionButtons);
-     Panel displayButtons = new Panel();
-     displayButtons.add( preButton );
-     displayButtons.add( inoButton );
-     displayButtons.add( posButton );
-     add(displayButtons);
-     add( display );
-     add( messages );
-
-    addButton.addActionListener(this);
-     newButton.addActionListener(this);
-     preButton.addActionListener(this);
-     inoButton.addActionListener(this);
-     posButton.addActionListener(this);
+      
 
     root = null;
    }
@@ -58,42 +30,7 @@ public class BinaryTreeExample extends Applet implements ActionListener
    * @param the event that caused the method to be called
    */
    public void actionPerformed(ActionEvent e)
-   {
-     display.setText("");
-     if (e.getSource() == addButton)
-     {
-       // check for text in box
-       String data = dataField.getText();
-       if (data.length() != 0)
-       {
-         addNode(data);
-       }
-       else
-       {
-         messages.setText("No data to add!");
-       }
-     }
-     else
-     {
-       // start a new tree
-       if (e.getSource() == newButton)
-       {
-         root = null;
-       }
-       else
-       {
-         // a display button was pressed
-         if( root != null )
-         {
-           displayTree( e );
-         }
-         else
-         {
-           messages.setText("No tree to display!");
-         }
-       }
-     }
-   }
+   {}
    /**
    * Creates a new data Node and calls insertNode to actually put
    * it in the tree

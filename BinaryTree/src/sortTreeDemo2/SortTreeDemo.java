@@ -1,4 +1,6 @@
-package sortTreeDemo;
+package sortTreeDemo2;
+
+import java.util.Scanner;
 
 
 /**
@@ -15,6 +17,8 @@ public class SortTreeDemo {
    /**
     * An object of type TreeNode represents one node in a binary tree of strings.
     */
+	
+	static Scanner console=new Scanner(System.in);
    private static class TreeNode {
       String item;      // The data in this node.
       TreeNode left;    // Pointer to left subtree.
@@ -49,7 +53,7 @@ public class SortTreeDemo {
          System.out.println("\n\nEnter a string to be inserted, or press return to end.");
          System.out.print("?  ");
          String item;  // The user's input.
-         item = System.getenv().trim().toLowerCase(); 
+         item = console.next();
          if (item.length() == 0)
             break;
          if (treeContains(root,item)) {
