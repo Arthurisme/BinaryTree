@@ -1,36 +1,40 @@
 package EasySample;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+
  
 /**
 * This class demonstrates use of a binary tree to store names
 */
 public class BinaryTreeExample  
 {
+	
+	  Node root;
+	
+	
 	public BinaryTreeExample() {
+		
+	    root = null;
+		
 	}
-  // interface objects
    
+  
 
+	 public BinaryTreeExample( Object rootItem )
+	    {
+	        root = new Node (  null, null,rootItem );
+	    }
    
-
-   // pointer to root node
-   Node root;
-
-  /**
-   * Method to lay out the GUI and init the Applet
-   */
-   public void init()
-   {
-      
-
-    root = null;
-   }
    /**
    * Detect and act on Button presses
    *
    * @param the event that caused the method to be called
    */
-   public void actionPerformed(ActionEvent e)
-   {}
+  
    /**
    * Creates a new data Node and calls insertNode to actually put
    * it in the tree
@@ -43,7 +47,7 @@ public class BinaryTreeExample
      Node temp = new Node(null, null, data);
     if ( root == null )
      {
-       display.append("Starting new tree\n");
+       System.out.append("Starting new tree\n");
        root = temp;
      }
      else
@@ -52,6 +56,8 @@ public class BinaryTreeExample
        insertNode( root, temp );
      }
    }
+   
+    
    /**
    * insert a node into the tree at the correct position
    *
@@ -69,7 +75,7 @@ public class BinaryTreeExample
      if (ts.compareTo(ns) > 0)
      {
        // test add at right
-       display.append("Testing right of " + ns + "\n");
+       System.out.append("Testing right of " + ns + "\n");
        if (n.getRight() == null)
        {
          // found a space to put this node
@@ -84,7 +90,7 @@ public class BinaryTreeExample
      else
      {
        // test add at left
-       display.append("Testing left of " + ns + "\n");
+       System.out.append("Testing left of " + ns + "\n");
        if (n.getLeft() == null)
        {
          n.setLeft(temp);
@@ -100,26 +106,7 @@ public class BinaryTreeExample
    *
    * @param e - the Button that triggered the display request
    */
-   public void displayTree(ActionEvent e)
-   {
-     // selects display method depending upon button
-     // pressed by user.
-     if( e.getSource() == preButton )
-     {
-       displayTreePreOrder( root );
-     }
-     else
-     {
-       if( e.getSource() == inoButton )
-       {
-         displayTreeInOrder( root );
-       }
-       else
-       {
-         displayTreePostOrder( root );
-       }
-     }
-   }
+  
    /**
    * Inorder traversal of the tree
    *
@@ -130,7 +117,7 @@ public class BinaryTreeExample
      if (n != null)
      {
        displayTreeInOrder(n.getLeft());
-       display.append((String) n.getData() + "\n");
+       System.out.append((String) n.getData() + "\n");
        displayTreeInOrder(n.getRight());
      }
    }
@@ -145,7 +132,7 @@ public class BinaryTreeExample
      {
        displayTreePostOrder(n.getLeft());
        displayTreePostOrder(n.getRight());
-       display.append((String) n.getData() + "\n");
+       System.out.append((String) n.getData() + "\n");
      }
    }
    /**
@@ -157,9 +144,15 @@ public class BinaryTreeExample
    {
      if (n != null)
      {
-       display.append((String) n.getData() + "\n");
+       System.out.append((String) n.getData() + "\n");
        displayTreePreOrder(n.getLeft());
        displayTreePreOrder(n.getRight());
      }
    }
+   
+  
+   
+   static Scanner console=new Scanner(System.in);
+
+	
 } 

@@ -17,7 +17,11 @@ package weiss.binarytree;
  * BinaryNode recursive routines and merge.
  */
 public class BinaryTree<AnyType>
+
 {
+	
+	 private BinaryNode<AnyType> root;
+	 
     public BinaryTree( )
     {
         root = null;
@@ -97,7 +101,7 @@ public class BinaryTree<AnyType>
     
     
     
-    private BinaryNode<AnyType> root;
+   
 
     static public void main( String [ ] args )
     {
