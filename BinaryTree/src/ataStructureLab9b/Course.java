@@ -19,7 +19,7 @@ public class Course {
 
     
     public Course() {
-		super();
+		//super();
 	}
 
 	public Course(String course_no, String course_name, int max_enrl) {		

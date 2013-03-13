@@ -13,15 +13,15 @@ public class LabReview8 {
 		tree.put(8);	
 		
 		
-		System.out.println("Inorder Traversal  :");
+		System.out.println("Showing the tree by Inorder Traversal  :");
 
 		 
-		//tree.InorderTraversal();
+		 tree.InorderTraversal();
 		
-		System.out.println("Inorder Traversal after deleting number7:");
+		System.out.println("Inorder Traversal after deleting number of 7:");
 
-		//tree.delete(7);
-		//tree.InorderTraversal();
+		 tree.delete(7);
+		 tree.InorderTraversal();
 		
 
 		
